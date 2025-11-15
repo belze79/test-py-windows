@@ -37,7 +37,7 @@ def write_module_json(list_modules: list[str]):
 
 env_processes: TypeProcess = [
     ((exe, '-m', 'venv', Paths.VENV, '--copies'), 'Creating Virtual Environment'),
-    ((Paths.PIP_EXE, 'install', '--upgrade', 'pip'), 'Upgrading pip'),
+    ((Paths.PY_EXE, '-m', 'pip', 'install', '--upgrade', 'pip'), 'Upgrading pip'),
     ((Paths.PIP_EXE, 'install', '-r', Paths.REQUIREMENTS_TXT), f'Installing modules from {Paths.REQUIREMENTS_TXT.name}')
 ]
 
